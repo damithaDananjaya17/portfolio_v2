@@ -23,7 +23,7 @@ FROM node:14-slim
 WORKDIR /app
 
 #Copy only the built files from the previous stage 
-COPY --from-build /app/build
+COPY --from=build /app/build
 
 #Install serve globally to serve the application 
 RUN npm install -g serve
